@@ -1,0 +1,45 @@
+/* Body background */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Container for scrolling grid */
+.scroll-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Grid of cards */
+.scroll-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 4 cards per row */
+    grid-auto-rows: 180px; /* adjust card height */
+    gap: 20px;
+    width: max-content; /* ensures grid can scroll horizontally */
+    animation: scrollGrid 30s linear infinite;
+}
+
+/* Each card */
+.message-card {
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Scroll animation */
+@keyframes scrollGrid {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* adjust if needed */
+}
+
+/* Pause on hover */
+.scroll-wrapper:hover .scroll-grid {
+    animation-play-state: paused;
+}
